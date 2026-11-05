@@ -1,11 +1,13 @@
 <template>
   <RouterView />
   <FirmaDialogo />
+  <AsistenteVozModal />
 </template>
 
 <script setup>
 import { RouterView } from 'vue-router'
 import FirmaDialogo from './components/FirmaDialogo.vue'
+import AsistenteVozModal from './components/AsistenteVozModal.vue'
 </script>
 
 <style>

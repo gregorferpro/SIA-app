@@ -94,6 +94,18 @@ urlpatterns = [
             "recuperacion.urls"
         )
     ),
+
+
+    # ======================================================
+    # ASISTENTE VIRTUAL (OLLAMA)
+    # ======================================================
+
+    path(
+        "api/asistente/",
+        include(
+            "asistente.urls"
+        )
+    ),
 ]
 
 

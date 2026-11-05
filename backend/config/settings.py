@@ -102,6 +102,7 @@ INSTALLED_APPS = [
     'mantenimiento',
     'compras',
     'recuperacion',
+    'asistente',
 ]
 
 
@@ -335,6 +336,22 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
 }
+
+
+# ==========================================================
+# ASISTENTE VIRTUAL (OLLAMA)
+# ==========================================================
+#
+# Ollama corre en el equipo anfitrión. En sia-app la URL apunta
+# a la IP del anfitrión; en desarrollo local, a 127.0.0.1.
+# OLLAMA_TIMEOUT debe quedar por debajo del --timeout de
+# Gunicorn (120 s) y del proxy_read_timeout de Nginx.
+#
+# ==========================================================
+
+OLLAMA_URL = os.environ.get('OLLAMA_URL', 'http://127.0.0.1:11434')
+OLLAMA_MODELO = os.environ.get('OLLAMA_MODELO', 'sigta-ai')
+OLLAMA_TIMEOUT = int(os.environ.get('OLLAMA_TIMEOUT', '60'))
 
 
 # ==========================================================
